@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/s3rg4n/Pictures/mountain.jpg' 
