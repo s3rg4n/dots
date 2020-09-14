@@ -35,6 +35,24 @@ function extractPorts(){
 	cat extractPorts.tmp; rm extractPorts.tmp
 }
 
+# Create wordlist from file
+function fileWordlistGenerator(){
+
+	WORD_LIST=$1
+	OUTPUT_FILE=$2
+
+	while read line;
+	do
+  		echo "Creating names for $line"
+  		echo "$line.html" >> "$OUTPUT_FILE.txt"
+  		echo "$line.php" >> "$OUTPUT_FILE.txt"
+  		echo "$line.txt" >> "$OUTPUT_FILE.txt"
+	done < $WORD_LIST
+
+	echo "\[\+\] Wordlist done!"
+}
+
+
 function rmk(){
 	scrub -p dod $1
 	shred -zun 10 -v $1
