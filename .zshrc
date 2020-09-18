@@ -35,8 +35,8 @@ function extractPorts(){
 	cat extractPorts.tmp; rm extractPorts.tmp
 }
 
-# Create wordlist from file
-function fileWordlistGenerator(){
+# Create web file wordlist from file
+function fileWordlistGeneratorWeb(){
 
 	WORD_LIST=$1
 	OUTPUT_FILE=$2
@@ -49,9 +49,47 @@ function fileWordlistGenerator(){
   		echo "$line.txt" >> "$OUTPUT_FILE.txt"
 	done < $WORD_LIST
 
-	echo "\[\+\] Wordlist done!"
+	echo "[+] Wordlist done!"
 }
 
+# Create wordlist from two files
+function fileWordlistGenerator(){
+
+        WORD_LIST1=$1
+        WORD_LIST2=$2
+	OUTPUT=$3
+
+        while read line_wordlist_1;
+        do
+		while read line_wordlist_2;
+		do
+			echo $line_wordlist_1$line_wordlist_2 >> $OUTPUT
+		done < $WORD_LIST2
+        done < $WORD_LIST1
+
+        echo "[+] Wordlist done!"
+}
+
+# Create wordlist from file adding 1234 123! 1234!
+function fileWordlistGenerator1234(){
+
+	WORD_LIST=$1
+	OUTPUT=$2
+
+	while read line;
+	do
+		echo $line"123" >> $OUTPUT
+		echo $line"123!" >> $OUTPUT
+		echo $line"1234" >> $OUTPUT
+		echo $line"1234!" >> $OUTPUT
+		echo "123"$line >> $OUTPUT
+		echo "123!"$line >> $OUTPUT
+		echo "1234"$line >> $OUTPUT
+		echo "1234!"$line >> $OUTPUT
+	done < $WORD_LIST
+
+	echo "[+] Wordlist done!"
+}
 
 function rmk(){
 	scrub -p dod $1
