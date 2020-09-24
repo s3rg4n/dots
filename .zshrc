@@ -14,7 +14,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 
 # Manual configuration
-PATH=/home/s3rg4n/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/s3rg4n/.cargo/bin:/home/s3rg4n/Downloads/sonar-scanner-4.4.0.2170-linux/bin
+PATH=/home/s3rg4n/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/home/s3rg4n/.cargo/bin:/home/s3rg4n/Downloads/sonar-scanner-4.4.0.2170-linux/bin
 
 
 
