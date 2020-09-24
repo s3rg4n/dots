@@ -36,7 +36,7 @@ function extractPorts(){
 }
 
 # Create web file wordlist from file
-function fileWordlistGeneratorWeb(){
+function wordlistGeneratorWeb(){
 
 	WORD_LIST=$1
 	OUTPUT_FILE=$2
@@ -53,17 +53,19 @@ function fileWordlistGeneratorWeb(){
 }
 
 # Create wordlist from two files
-function fileWordlistGenerator(){
+function wordlistGenerator(){
 
+		echo "2 files into 1"
         WORD_LIST1=$1
         WORD_LIST2=$2
-	OUTPUT=$3
+		OUTPUT=$3
 
         while read line_wordlist_1;
         do
 		while read line_wordlist_2;
 		do
 			echo $line_wordlist_1$line_wordlist_2 >> $OUTPUT
+			echo $line_wordlist_2$line_wordlist_1 >> $OUTPUT
 		done < $WORD_LIST2
         done < $WORD_LIST1
 
@@ -71,7 +73,7 @@ function fileWordlistGenerator(){
 }
 
 # Create wordlist from file adding 1234 123! 1234!
-function fileWordlistGenerator1234(){
+function wordlistGenerator1234(){
 
 	WORD_LIST=$1
 	OUTPUT=$2
